@@ -25,12 +25,12 @@ jobs:
     - name: Deploy
       run: |
         npm install hexo-cli -g
-        hexo generate
+        hexo g
       env:
         NODE_OPTIONS: --max_old_space_size=4096
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.TOKEN }}
         publish_dir: ./public
