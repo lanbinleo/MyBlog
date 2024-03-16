@@ -1,38 +1,57 @@
 ---
-title: Hello World
+title: Hello Hexo
+abbrlink: 4a17b156
+tags: 
+    - Blog
+    - Theme
+categories: 
+    - Literary
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+Long lost.
+I picked up my pen again.
+The story of the past let it be dusted off and
+No one will ever know again.
 
-### Create a new post
+Standing on the heights of stone
+I realized I couldn't see
+My past, my footprints
+My lost time and youth
 
-``` bash
-$ hexo new "My New Post"
-```
+The fields ahead are still turquoise
+The mountains are still high when I look back
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+And I kneel in reverence
+Mary told me.
+"Child, write.
+"before the truth is lost in the abyss.
+"before the future is still hopeful.
+Remember what was first.
+--It's the only way. "
 
-### Run server
+久违了。
+我再次拿起笔。
+过去的故事，就让它尘封起来吧，而且
+再无人知晓。
 
-``` bash
-$ hexo server
-```
+站在石头的高处
+我发现我看不见
+我的过去，我的足迹
+我逝去的时光和青春
 
-More info: [Server](https://hexo.io/docs/server.html)
+前方的田野依然碧绿
+蓦然回首，高山依旧
 
-### Generate static files
+我虔诚地跪下
+玛丽告诉我
+"孩子，写吧
+"在真相迷失在深渊之前
+"在未来还充满希望之前
+记住最初的一切
+--这是唯一的办法 "
 
-``` bash
-$ hexo generate
-```
+再见，Halo。
+愿下次见面，你还是少年。
+你好，Hexo。
+愿往后余生，你还在身边。
 
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
