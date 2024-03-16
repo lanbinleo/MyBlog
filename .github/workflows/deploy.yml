@@ -1,0 +1,36 @@
+name: Deploy Hexo
+
+on:
+  push:
+    branches:
+      - main  # 或者你使用的是master分支，就改为master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14' # 可以根据需要选择Node.js的版本
+
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: Deploy
+      env:
+        GH_TOKEN: ${{ secrets.TOKEN }}
+      run: |
+        npm install hexo-deployer-git --save
+        hexo generate
+        hexo deploy
