@@ -66,3 +66,8 @@ abbrlink:
   rep: hex    #进制: dec(default) and hex
 archive_generator:
   per_page: 0
+deploy:
+  type: git
+  repo: https://github.com/lanbinleo/MyBlog.git
+  # example, https://github.com/hexojs/hexojs.github.io
+  branch: gh-pages

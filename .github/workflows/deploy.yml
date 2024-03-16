@@ -1,9 +1,7 @@
 name: Pages
 
 on:
-  push:
-    branches:
-      - main # default branch
+  # 手动
 
 jobs:
   build:
