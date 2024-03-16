@@ -32,7 +32,7 @@ hue: 255
 avatar: assets/62149873.jpg      
   # 头像图片文件路径，相对于 /source 目录
 author: Leo Huo
-subtitle: 明月装饰了你的窗子，你装饰了别人的梦
+subtitle: The moon decorates your windows, you decorate other people's dreams.
 links:
   - name: Email Me
     icon: fa-regular fa-envelope
