@@ -95,5 +95,5 @@ comment:
 gauges_analytics: false
 google_analytics: false 
   # UA-xxxxxx
-baidu_analytics: false 
+baidu_analytics: 3c140db78a889d4844bf4081baf137f5 
   # ddxxxxxxxxxxxxxxxxx In the https://hm.baidu.com/hm.js? Afterwards
