@@ -1,32 +1,39 @@
-name: Deploy Hexo to GitHub Pages
+name: Deploy Hexo
 
 on:
   push:
     branches:
-      - main
+      - main  # 或者你使用的是master分支，就改为master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14' # 可以根据需要选择Node.js的版本
 
-      - name: Install dependencies
-        run: npm install
+    - name: Cache dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
 
-      - name: Build Hexo site
-        run: npm run build
+    - name: Install Dependencies
+      run: |
+        npm install
+        git clone https://github.com/saicaca/hexo-theme-vivia.git themes/vivia
+        npm install colorjs.io stylus hexo-symbols-count-time
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages
+    - name: Deploy
+      env:
+        GH_TOKEN: ${{ secrets.TOKEN }}
+      run: |
+        npm install hexo-deployer-git --save
+        hexo generate
+        hexo deploy

@@ -71,3 +71,4 @@ deploy:
   repo: https://github.com/lanbinleo/MyBlog.git
   # example, https://github.com/hexojs/hexojs.github.io
   branch: gh-pages
+  
