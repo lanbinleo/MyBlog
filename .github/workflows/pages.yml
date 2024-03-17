@@ -26,6 +26,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        npm install hexo -g
         npm install
         git clone https://github.com/saicaca/hexo-theme-vivia.git themes/vivia
         npm install colorjs.io stylus hexo-symbols-count-time
