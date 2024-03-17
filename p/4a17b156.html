@@ -11,28 +11,39 @@
   <meta charset="utf-8">
   
   
+<!-- Global site tag (gtag.js) - Baidu Analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3c140db78a889d4844bf4081baf137f5";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- End Baidu Analytics -->
+
   
 
   
-  <title>Hexo Github 自动部署和一些踩坑经验 | Lanbin Leo</title>
+  <title>Hello Hexo | Lanbin Leo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="前言这两天在捣鼓Hexo博客。我就在想，如果每次写完博客，我该如何发布到网上去呢？我第一个想到的就是Github pages的静态文件托管，但是每次都要手动执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d，这样太麻烦了。于是我就想到了Github Actions。 配置分享在经过了无数次的失败后，我终于成功了。我将我的配置分享出来，希望对你有所帮助。">
+  <meta name="description" content="Long lost.I picked up my pen again.The story of the past let it be dusted off andNo one will ever know again. Standing on the heights of stoneI realized I couldn’t seeMy past, my footprintsMy lost tim">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo Github 自动部署和一些踩坑经验">
-<meta property="og:url" content="https://blog.lanbin.top/97df2bec/index.html">
+<meta property="og:title" content="Hello Hexo">
+<meta property="og:url" content="https://blog.lanbin.top/p/4a17b156.html">
 <meta property="og:site_name" content="Lanbin Leo">
-<meta property="og:description" content="前言这两天在捣鼓Hexo博客。我就在想，如果每次写完博客，我该如何发布到网上去呢？我第一个想到的就是Github pages的静态文件托管，但是每次都要手动执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d，这样太麻烦了。于是我就想到了Github Actions。 配置分享在经过了无数次的失败后，我终于成功了。我将我的配置分享出来，希望对你有所帮助。">
+<meta property="og:description" content="Long lost.I picked up my pen again.The story of the past let it be dusted off andNo one will ever know again. Standing on the heights of stoneI realized I couldn’t seeMy past, my footprintsMy lost tim">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-17T10:39:55.000Z">
-<meta property="article:modified_time" content="2024-03-17T08:44:36.243Z">
+<meta property="article:published_time" content="2024-03-16T16:17:03.000Z">
+<meta property="article:modified_time" content="2024-03-17T10:32:25.237Z">
 <meta property="article:author" content="Leo Huo">
 <meta property="article:tag" content="Blog">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="Github">
+<meta property="article:tag" content="Theme">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternate" href="/atom.xml" title="Lanbin Leo" type="application/atom+xml">
@@ -198,7 +209,7 @@
        
 
 
-<article id="post-240317-gh-actions-share" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
    
@@ -211,7 +222,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        Hexo Github 自动部署和一些踩坑经验
+        Hello Hexo
       </h1>
     
   
@@ -219,46 +230,35 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2024-03-17T10:39:55.000Z" itemprop="datePublished">2024-03-17</time>
+  <time class="dt-published" datetime="2024-03-16T16:17:03.000Z" itemprop="datePublished">2024-03-16</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-  <a class="meta-cate-link" href="/categories/Config/">Config</a>
+  <a class="meta-cate-link" href="/categories/Literary/">Literary</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.6k words 
+            565 words 
           </div>
         </div>
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theme/" rel="tag">Theme</a></li></ul>
 
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这两天在捣鼓Hexo博客。我就在想，如果每次写完博客，我该如何发布到网上去呢？我第一个想到的就是Github pages的静态文件托管，但是每次都要手动执行<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>，这样太麻烦了。于是我就想到了Github Actions。</p>
-<h2 id="配置分享"><a href="#配置分享" class="headerlink" title="配置分享"></a>配置分享</h2><p>在经过了无数次的失败后，我终于成功了。我将我的配置分享出来，希望对你有所帮助。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">Hexo</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">main</span>  <span class="comment"># 或者你使用的是master分支，就改为master</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">deploy:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">uses:</span> <span class="string">actions/checkout@v2</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Setup</span> <span class="string">Node.js</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/setup-node@v1</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">node-version:</span> <span class="string">&#x27;21&#x27;</span> <span class="comment"># 可以根据需要选择Node.js的版本</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Cache</span> <span class="string">dependencies</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">actions/cache@v2</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">path:</span> <span class="string">~/.npm</span></span><br><span class="line">        <span class="attr">key:</span> <span class="string">$&#123;&#123;</span> <span class="string">runner.os</span> <span class="string">&#125;&#125;-node-$&#123;&#123;</span> <span class="string">hashFiles(&#x27;**/package-lock.json&#x27;)</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">restore-keys:</span> <span class="string">|</span></span><br><span class="line"><span class="string">          $&#123;&#123; runner.os &#125;&#125;-node-</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Install</span> <span class="string">Dependencies</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line"><span class="string">        npm install hexo -g</span></span><br><span class="line"><span class="string">        npm install</span></span><br><span class="line"><span class="string">        git clone https://github.com/saicaca/hexo-theme-vivia.git themes/vivia</span></span><br><span class="line"><span class="string">        npm install colorjs.io stylus hexo-symbols-count-time</span></span><br><span class="line"><span class="string"></span></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Generate</span> <span class="string">static</span> <span class="string">pages</span></span><br><span class="line">      <span class="attr">run:</span> <span class="string">hexo</span> <span class="string">generate</span></span><br><span class="line"></span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Deploy</span> <span class="string">to</span> <span class="string">GitHub</span> <span class="string">Pages</span></span><br><span class="line">      <span class="attr">uses:</span> <span class="string">peaceiris/actions-gh-pages@v3</span></span><br><span class="line">      <span class="attr">with:</span></span><br><span class="line">        <span class="attr">github_token:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITHUB_TOKEN</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">publish_dir:</span> <span class="string">./public</span>  <span class="comment"># Hexo默认生成的目录</span></span><br></pre></td></tr></table></figure>
-
-<p>这个actions比较好看懂。</p>
-<ol>
-<li>首先是<code>on</code>，表示在什么时候执行这个actions。这里是在push到main分支的时候执行。</li>
-<li><code>jobs</code>就是你这个actions要执行的任务。这里只有一个任务，叫<code>deploy</code>。</li>
-<li><code>runs-on</code>表示这个任务要在什么环境下执行。这里是在ubuntu-latest下执行。</li>
-<li><code>steps</code>就是这个任务要执行的步骤。这里有6个步骤。<ul>
-<li><code>actions/checkout@v2</code>是用来checkout代码的（其实我也不知道有啥用）。</li>
-<li><code>actions/setup-node@v1</code>是用来安装Node.js的，版本按照你的需求修改。</li>
-<li><code>actions/cache@v2</code>是用来缓存依赖的，如果你的主机上已经有了依赖，就不用再安装了。</li>
-<li><code>npm install</code>是用来安装依赖的，这个地方要根据不同的主题做定制化的修改，我这里是vivia。</li>
-<li><code>hexo generate</code>是用来生成博客静态文件的。</li>
-<li><code>peaceiris/actions-gh-pages@v3</code>是用来将你的静态文件发布到Github Pages上的。</li>
-</ul>
-</li>
-</ol>
-<h2 id="踩坑！"><a href="#踩坑！" class="headerlink" title="踩坑！"></a>踩坑！</h2><p>有一些小的容易踩坑的点，比如如果发现每次部署之后自定义pages域名被刷掉了，可以在<code>source</code>文件夹中添加CNAME文件，这样就可以保证每次部署之后自定义pages域名不会被刷掉（hexo会复制这个文件到部署目录）。</p>
+          <p>Long lost.<br>I picked up my pen again.<br>The story of the past let it be dusted off and<br>No one will ever know again.</p>
+<p>Standing on the heights of stone<br>I realized I couldn’t see<br>My past, my footprints<br>My lost time and youth</p>
+<p>The fields ahead are still turquoise<br>The mountains are still high when I look back</p>
+<p>And I kneel in reverence<br>Mary told me.<br>“Child, write.<br>“before the truth is lost in the abyss.<br>“before the future is still hopeful.<br>Remember what was first.<br>–It’s the only way. “</p>
+<p>久违了。<br>我再次拿起笔。<br>过去的故事，就让它尘封起来吧，而且<br>再无人知晓。</p>
+<p>站在石头的高处<br>我发现我看不见<br>我的过去，我的足迹<br>我逝去的时光和青春</p>
+<p>前方的田野依然碧绿<br>蓦然回首，高山依旧</p>
+<p>我虔诚地跪下<br>玛丽告诉我<br>“孩子，写吧<br>“在真相迷失在深渊之前<br>“在未来还充满希望之前<br>记住最初的一切<br>–这是唯一的办法 “</p>
+<p>再见，Halo。<br>愿下次见面，你还是少年。<br>你好，Hexo。<br>愿往后余生，你还在身边。</p>
 
         
       </div>
@@ -273,25 +273,20 @@
 <nav id="article-nav">
   <a class="article-nav-btn left "
     
-      href="/a4bbf5c1/"
-      title="添情"
+      href="/p/71246382.html"
+      title="Willana"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
       
-        添情
+        Willana
         
     </p>
   </a>
-  <a class="article-nav-btn right "
-    
-      href="/71246382/"
-      title="Willana"
+  <a class="article-nav-btn right  disabled "
      >
 
     <p class="title-text">
-      
-        Willana
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
