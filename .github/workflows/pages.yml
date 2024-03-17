@@ -35,8 +35,7 @@ jobs:
       run: hexo generate
 
     - name: Restore CNAME
-        run: |
-          cp -f ./CNAME_backup ./public/CNAME || true
+        run: cp -f ./CNAME_backup ./public/CNAME || true
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
