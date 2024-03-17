@@ -23,12 +23,12 @@
   <meta name="description" content="前言这两天在捣鼓Hexo博客。我就在想，如果每次写完博客，我该如何发布到网上去呢？我第一个想到的就是Github pages的静态文件托管，但是每次都要手动执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d，这样太麻烦了。于是我就想到了Github Actions。 配置分享在经过了无数次的失败后，我终于成功了。我将我的配置分享出来，希望对你有所帮助。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo Github 自动部署和一些踩坑经验">
-<meta property="og:url" content="http://example.com/97df2bec/index.html">
+<meta property="og:url" content="https://blog.lanbin.top/97df2bec/index.html">
 <meta property="og:site_name" content="Lanbin Leo">
 <meta property="og:description" content="前言这两天在捣鼓Hexo博客。我就在想，如果每次写完博客，我该如何发布到网上去呢？我第一个想到的就是Github pages的静态文件托管，但是每次都要手动执行hexo clean &amp;&amp; hexo g &amp;&amp; hexo d，这样太麻烦了。于是我就想到了Github Actions。 配置分享在经过了无数次的失败后，我终于成功了。我将我的配置分享出来，希望对你有所帮助。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-17T10:39:55.000Z">
-<meta property="article:modified_time" content="2024-03-17T02:52:40.251Z">
+<meta property="article:modified_time" content="2024-03-17T03:32:09.938Z">
 <meta property="article:author" content="Leo Huo">
 <meta property="article:tag" content="Blog">
 <meta property="article:tag" content="Hexo">
@@ -142,7 +142,7 @@
         
           <a class="link-btn" href="mailto:lanbinwolf@gmail.com" title="Email Me"><i class="fa-regular fa-envelope"></i></a>
         
-          <a class="link-btn" target="_blank" rel="noopener" href="https://www.bilibili.com/" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a>
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/511022936" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a>
         
           <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/lanbinleo" title="GitHub"><i class="fa-brands fa-github"></i></a>
          
@@ -161,9 +161,14 @@
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/Config/">
+                Config
+                <div class="category-count">1</div>
+            </a>
+        
             <a class="category-link" href="/categories/Literary/">
                 Literary
-                <div class="category-count">2</div>
+                <div class="category-count">3</div>
             </a>
         </div>
     </div>
@@ -175,7 +180,7 @@
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">Tags</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Memo/" rel="tag">Memo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Theme/" rel="tag">Theme</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Love/" rel="tag">Love</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Memo/" rel="tag">Memo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Poem/" rel="tag">Poem</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Theme/" rel="tag">Theme</a></li></ul>
     </div>
   </div>
 
@@ -214,7 +219,7 @@
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-    Uncategorized 
+  <a class="meta-cate-link" href="/categories/Config/">Config</a>
    
 </div>
   
@@ -261,10 +266,15 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left  disabled "
+  <a class="article-nav-btn left "
+    
+      href="/a4bbf5c1/"
+      title="添情"
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
+      
+        添情
         
     </p>
   </a>
