@@ -14,7 +14,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '14' # 可以根据需要选择Node.js的版本
+        node-version: '21' # 可以根据需要选择Node.js的版本
 
     - name: Cache dependencies
       uses: actions/cache@v2
