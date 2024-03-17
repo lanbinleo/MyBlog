@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+
+<html theme="dark" showBanner="true" hasBanner="true" > 
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
+<link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
+<script src="/js/color.global.min.js" ></script>
+<script src="/js/load-settings.js" ></script>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+
+  
+  <title>2024 ACSL中级组第三轮编程解析 | Lanbin Leo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+  <meta name="description" content="今天考了ACSL中级组第三轮，题目还是比较有意思的。是关于Rack-O游戏的模拟。 根据题目比较机翻的描述：Rack-O游戏是一种纸牌游戏，玩家需要在牌架上摆放卡牌，并且在抽取卡牌堆中的卡牌时，按照一定的规则进行替换。这次的题目就是要求我们模拟这个游戏的过程，并且计算最后的得分。 问题描述在 ACSL 版的 Rack-O 游戏中，玩家会被告知卡槽数量 s，以及卡牌数量 n。每张卡牌上都有一个在 1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2024 ACSL中级组第三轮编程解析">
+<meta property="og:url" content="https://blog.lanbin.top/eed79f2/index.html">
+<meta property="og:site_name" content="Lanbin Leo">
+<meta property="og:description" content="今天考了ACSL中级组第三轮，题目还是比较有意思的。是关于Rack-O游戏的模拟。 根据题目比较机翻的描述：Rack-O游戏是一种纸牌游戏，玩家需要在牌架上摆放卡牌，并且在抽取卡牌堆中的卡牌时，按照一定的规则进行替换。这次的题目就是要求我们模拟这个游戏的过程，并且计算最后的得分。 问题描述在 ACSL 版的 Rack-O 游戏中，玩家会被告知卡槽数量 s，以及卡牌数量 n。每张卡牌上都有一个在 1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.lanbin.top/assets/240317-acsl-answer/1.png">
+<meta property="article:published_time" content="2024-03-17T16:30:50.000Z">
+<meta property="article:modified_time" content="2024-03-17T08:44:36.243Z">
+<meta property="article:author" content="Leo Huo">
+<meta property="article:tag" content="ACSL">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.lanbin.top/assets/240317-acsl-answer/1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Lanbin Leo" type="application/atom+xml">
+  
+  
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-192.png" sizes="192x192">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-32.png" sizes="32x32">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-128.png" sizes="128x128">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-180.png" sizes="180x180">
+    <link rel="icon" media="(prefers-color-scheme: dark)" href="/images/favicon-dark-192.png" sizes="192x192">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  
+  
+    
+<div id="banner" class="">
+  <img src="/assets/banner.jpg" itemprop="image">
+  <div id="banner-dim"></div>
+</div>
+ 
+   
+  <div id="main-grid" class="  ">
+    <div id="nav" class=""  >
+      <navbar id="navbar">
+  <nav id="title-nav">
+    <a href="/">
+      <div id="vivia-logo">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+      </div>
+      <div>Lanbin Leo </div>
+    </a>
+  </nav>
+  <nav id="main-nav">
+    
+      <a class="main-nav-link" href="/">Home</a>
+    
+      <a class="main-nav-link" href="/archives">Archives</a>
+    
+      <a class="main-nav-link" href="/about">About</a>
+    
+  </nav>
+  <nav id="sub-nav">
+    <a id="theme-btn" class="nav-icon">
+      <span class="light-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M438.5-829.913v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-829.913Zm0 747.826v-48q0-17.452 11.963-29.476 11.964-12.024 29.326-12.024 17.363 0 29.537 12.024t12.174 29.476v48q0 17.452-11.963 29.476-11.964 12.024-29.326 12.024-17.363 0-29.537-12.024T438.5-82.087ZM877.913-438.5h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537t29.476-12.174h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T877.913-438.5Zm-747.826 0h-48q-17.452 0-29.476-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T82.087-521.5h48q17.452 0 29.476 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T130.087-438.5Zm660.174-290.87-34.239 32q-12.913 12.674-29.565 12.174-16.653-.5-29.327-13.174-12.674-12.673-12.554-28.826.12-16.152 12.794-28.826l33-35q12.913-12.674 30.454-12.674t30.163 12.847q12.709 12.846 12.328 30.826-.38 17.98-13.054 30.653ZM262.63-203.978l-32 34q-12.913 12.674-30.454 12.674t-30.163-12.847q-12.709-12.846-12.328-30.826.38-17.98 13.054-30.653l33.239-31q12.913-12.674 29.565-12.174 16.653.5 29.327 13.174 12.674 12.673 12.554 28.826-.12 16.152-12.794 28.826Zm466.74 33.239-32-33.239q-12.674-12.913-12.174-29.565.5-16.653 13.174-29.327 12.673-12.674 28.826-13.054 16.152-.38 28.826 12.294l35 33q12.674 12.913 12.674 30.454t-12.847 30.163q-12.846 12.709-30.826 12.328-17.98-.38-30.653-13.054ZM203.978-697.37l-34-33q-12.674-12.913-13.174-29.945-.5-17.033 12.174-29.707t31.326-13.293q18.653-.62 31.326 13.054l32 34.239q11.674 12.913 11.174 29.565-.5 16.653-13.174 29.327-12.673 12.674-28.826 12.554-16.152-.12-28.826-12.794ZM480-240q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm-.247-82q65.703 0 111.475-46.272Q637-414.544 637-480.247t-45.525-111.228Q545.95-637 480.247-637t-111.475 45.525Q323-545.95 323-480.247t45.525 111.975Q414.05-322 479.753-322ZM481-481Z"/></svg></span>
+      <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
+    </a>
+    
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
+      </a>
+    
+    <div id="nav-menu-btn" class="nav-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M177.37-252.282q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Zm0-186.218q-17.453 0-29.477-11.963-12.024-11.964-12.024-29.326 0-17.363 12.024-29.537T177.37-521.5h605.26q17.453 0 29.477 11.963 12.024 11.964 12.024 29.326 0 17.363-12.024 29.537T782.63-438.5H177.37Zm0-186.217q-17.453 0-29.477-11.964-12.024-11.963-12.024-29.326t12.024-29.537q12.024-12.174 29.477-12.174h605.26q17.453 0 29.477 11.964 12.024 11.963 12.024 29.326t-12.024 29.537q-12.024 12.174-29.477 12.174H177.37Z"/></svg>
+    </div>
+  </nav>
+</navbar>
+<div id="nav-dropdown" class="hidden">
+  <div id="dropdown-link-list">
+    
+      <a class="nav-dropdown-link" href="/">Home</a>
+    
+      <a class="nav-dropdown-link" href="/archives">Archives</a>
+    
+      <a class="nav-dropdown-link" href="/about">About</a>
+    
+    
+      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+     
+    </div>
+</div>
+<script>
+  let dropdownBtn = document.getElementById("nav-menu-btn");
+  let dropdownEle = document.getElementById("nav-dropdown");
+  dropdownBtn.onclick = function() {
+    dropdownEle.classList.toggle("hidden");
+  }
+</script>
+    </div>
+    <div id="sidebar-wrapper">
+      <sidebar id="sidebar">
+  
+    <div class="widget-wrap">
+  <div class="info-card">
+    <div class="avatar">
+      
+        <image src=/assets/62149873.jpg></image>
+      
+      <div class="img-dim"></div>
+    </div>
+    <div class="info">
+      <div class="username">Leo Huo </div>
+      <div class="dot"></div>
+      <div class="subtitle">The moon decorates your windows, you decorate other people's dreams. </div>
+      <div class="link-list">
+        
+          <a class="link-btn" href="mailto:lanbinwolf@gmail.com" title="Email Me"><i class="fa-regular fa-envelope"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/511022936" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a>
+        
+          <a class="link-btn" target="_blank" rel="noopener" href="https://github.com/lanbinleo" title="GitHub"><i class="fa-brands fa-github"></i></a>
+         
+      </div>  
+    </div>
+  </div>
+</div>
+
+  
+  <div class="sticky">
+    
+      
+
+
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Categories</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/Coding/">
+                Coding
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Config/">
+                Config
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/Literary/">
+                Literary
+                <div class="category-count">3</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">Tags</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ACSL/" rel="tag">ACSL</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Love/" rel="tag">Love</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Memo/" rel="tag">Memo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Poem/" rel="tag">Poem</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Theme/" rel="tag">Theme</a></li></ul>
+    </div>
+  </div>
+
+
+    
+  </div>
+</sidebar>
+    </div>
+    <div id="content-body">
+       
+
+
+<article id="post-240317-acsl-answer" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 class="p-name article-title" itemprop="headline name">
+        2024 ACSL中级组第三轮编程解析
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2024-03-17T16:30:50.000Z" itemprop="datePublished">2024-03-17</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/Coding/">Coding</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            3.2k words 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ACSL/" rel="tag">ACSL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <p>今天考了ACSL中级组第三轮，题目还是比较有意思的。是关于Rack-O游戏的模拟。</p>
+<p>根据题目比较机翻的描述：Rack-O游戏是一种纸牌游戏，玩家需要在牌架上摆放卡牌，并且在抽取卡牌堆中的卡牌时，按照一定的规则进行替换。这次的题目就是要求我们模拟这个游戏的过程，并且计算最后的得分。</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在 ACSL 版的 Rack-O 游戏中，玩家会被告知卡槽数量 s，以及卡牌数量 n。每张卡牌上都有一个在 1 到 n 之间（包括 1 和 n）的专属数字。玩家将会收到 s 张卡牌，然后将这些卡牌从前至后摆放在牌架上。除此之外，玩家还会收到一叠卡牌，形成一个抽牌堆，按照卡牌叠放顺序依次抽牌。如果牌架上的卡牌未按升序排列，那么对于每一张抽到的卡牌都要按以下顺序遵循下列规则：</p>
+<ol>
+<li><p>除牌架上第一张卡牌之外，如果抽到的卡牌的数字比在牌架上某一张卡牌上的数字小 1，则用这张抽到的卡牌替换牌架上这张牌前面的卡牌。</p>
+</li>
+<li><p>除牌架上最后一张卡牌之外，如果抽到的卡牌的数字比牌架上某一张卡牌上的数字大 1，则用这张抽到的牌替换牌架上这张牌后面的卡牌。</p>
+</li>
+<li><p>对于牌架上任意三张在相邻卡槽中的卡牌，如果在中间位置的卡牌上的数字并不介于这三张中第一张卡牌和最后一张卡牌的数字之间，但抽到的卡牌上的数字介于其间，则用抽到的卡牌替换在中间位置的卡牌。</p>
+</li>
+<li><p>如果抽到的卡牌比牌架上第二张卡牌小且牌架上第一张卡牌比第二张卡牌大，则用抽到的卡牌替换牌架上第一张卡牌。</p>
+</li>
+<li><p>如果抽到的卡牌比牌架上倒数第二张卡牌大且牌架上最后一张卡牌比倒数第二张卡牌小，则用抽到的卡牌替换最后一张卡牌。</p>
+</li>
+<li><p>否则，放弃使用抽到的卡牌，抽取下一张。</p>
+</li>
+</ol>
+<p>如果牌架上出现 3 张或更多张数字连续的卡牌，那么这些数字连续的卡牌每张都可以再加上5 分的奖励分。例如，如果牌架上出现数字 45、46、47，就可以额外加上 15 分的奖励分；如果牌架上出现数字 3、4、5、6，就可以额外加上 20 分的奖励分。但是，如果抽牌堆中的卡牌全部抽取完毕，但牌架上的所有卡牌未按升序排列，那么牌架值将会等于牌架上卡牌数字 递减 次数的相反数。举例来说，如果牌架上的卡牌数字序列为 40、47、20、56、15、16、17，那么数字 47 之后紧接着是较小的数字 20，数字 56 之后紧接着是较小的数字 15，这两次递减都会计入次数。并且，由于牌架上所有卡牌未按升序排列，因此 15, 16, 17 不计奖励分。所以最后牌架值等于 -2 。</p>
+<table>
+<thead>
+<tr>
+<th>输入数据</th>
+<th>输出数据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10 60 <br> 40 35 20 56 32 58 42 17 45 34 <br> 31 44 10 28 19 46 7 37 16 2</td>
+<td>341</td>
+</tr>
+<tr>
+<td>15 90 <br> 15 12 18 9 28 17 46 51 7 53 65 70 74 84 47 <br> 45 73 3 52 54 16 21 44 87 40 68 30 20</td>
+<td>752</td>
+</tr>
+<tr>
+<td>12 130 <br> 20 110 30 16 84 40 91 69 75 7 81 15 <br> 39 47 114 55 35 71 25 123 51 23 34 10 77 36 115</td>
+<td>656</td>
+</tr>
+<tr>
+<td>8 100 <br> 6 13 47 62 32 70 76 12 <br> 3 67 80 10 39 44 2 43 40 85 21 33 4 52</td>
+<td>421</td>
+</tr>
+<tr>
+<td>12 110 <br> 44 35 22 25 79 100 85 69 87 3 56 28 <br> 97 10 48 43 42 21 81 47 86 88 80 54 24 50</td>
+<td>-1</td>
+</tr>
+</tbody></table>
+<h2 id="代码展示"><a href="#代码展示" class="headerlink" title="代码展示"></a>代码展示</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Rank-O游戏模拟</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">checkIfEnd</span>(<span class="params">rank</span>):</span><br><span class="line">    <span class="comment"># 如果rank是升序排列的，返回True</span></span><br><span class="line">    <span class="keyword">if</span> rank == <span class="built_in">sorted</span>(rank):</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">calcBonus</span>(<span class="params">rank</span>):</span><br><span class="line">    bonus = <span class="number">0</span></span><br><span class="line">    consecutive_count = <span class="number">1</span>  <span class="comment"># 记录当前连续卡牌的数量</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(rank)):</span><br><span class="line">        <span class="keyword">if</span> rank[i] == rank[i-<span class="number">1</span>] + <span class="number">1</span>:</span><br><span class="line">            consecutive_count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> consecutive_count &gt;= <span class="number">3</span>:  <span class="comment"># 如果有3张或更多连续卡牌</span></span><br><span class="line">                bonus += consecutive_count * <span class="number">5</span></span><br><span class="line">            consecutive_count = <span class="number">1</span>  <span class="comment"># 重置连续卡牌计数</span></span><br><span class="line">    <span class="keyword">if</span> consecutive_count &gt;= <span class="number">3</span>:  <span class="comment"># 最后一组连续卡牌的处理</span></span><br><span class="line">        bonus += consecutive_count * <span class="number">5</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 计算牌架未按升序排列时的情况</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">sorted</span>(rank) != rank:  <span class="comment"># 如果牌架未按升序排列</span></span><br><span class="line">        decrement_count = <span class="built_in">sum</span>(<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(rank)) <span class="keyword">if</span> rank[i] &lt; rank[i-<span class="number">1</span>])</span><br><span class="line">        bonus = -decrement_count</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> bonus</span><br><span class="line"></span><br><span class="line">s, n = <span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split())</span><br><span class="line">rank = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split()))</span><br><span class="line">heap = <span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().split()))</span><br><span class="line"></span><br><span class="line">current_card = <span class="number">0</span></span><br><span class="line">use = <span class="number">0</span></span><br><span class="line">times = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">not</span> checkIfEnd(rank) <span class="keyword">and</span> times &lt; n:</span><br><span class="line">    times += <span class="number">1</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        current_card = heap.pop(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="comment"># print(rank, &quot;C&quot;,current_card, &quot;U&quot;, use)</span></span><br><span class="line"></span><br><span class="line">    flag = <span class="literal">False</span> <span class="comment"># 是否有满足的条件</span></span><br><span class="line">    use = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(rank)):</span><br><span class="line">        <span class="keyword">if</span> i != <span class="number">0</span> <span class="keyword">and</span> current_card == rank[i] - <span class="number">1</span>:</span><br><span class="line">            rank[i - <span class="number">1</span>] = current_card</span><br><span class="line">            flag = <span class="literal">True</span></span><br><span class="line">            use = <span class="number">1</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> flag: <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(rank)):</span><br><span class="line">        <span class="keyword">if</span> i != <span class="built_in">len</span>(rank) - <span class="number">1</span> <span class="keyword">and</span> current_card == rank[i] + <span class="number">1</span>:</span><br><span class="line">            rank[i + <span class="number">1</span>] = current_card</span><br><span class="line">            flag = <span class="literal">True</span></span><br><span class="line">            use = <span class="number">2</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> flag: <span class="keyword">continue</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(rank)):</span><br><span class="line">        <span class="keyword">if</span> i != <span class="number">0</span> <span class="keyword">and</span> i != <span class="built_in">len</span>(rank) - <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">if</span> current_card &gt; rank[i - <span class="number">1</span>] <span class="keyword">and</span> current_card &lt; rank[i + <span class="number">1</span>] <span class="keyword">and</span> (rank[i] &lt; rank[i - <span class="number">1</span>] <span class="keyword">or</span> rank[i] &gt; rank[i + <span class="number">1</span>]):</span><br><span class="line">                rank[i] = current_card</span><br><span class="line">                flag = <span class="literal">True</span></span><br><span class="line">                use = <span class="number">3</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> flag: <span class="keyword">continue</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(rank)):</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">1</span> <span class="keyword">and</span> current_card &lt; rank[<span class="number">1</span>] <span class="keyword">and</span> rank[<span class="number">0</span>] &gt; rank[<span class="number">1</span>]:</span><br><span class="line">            rank[<span class="number">0</span>] = current_card</span><br><span class="line">            flag = <span class="literal">True</span></span><br><span class="line">            use = <span class="number">4</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> flag: <span class="keyword">continue</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(rank)):</span><br><span class="line">        <span class="keyword">if</span> i == <span class="built_in">len</span>(rank) - <span class="number">2</span> <span class="keyword">and</span> current_card &gt; rank[-<span class="number">2</span>] <span class="keyword">and</span> rank[-<span class="number">1</span>] &lt; rank[-<span class="number">2</span>]:</span><br><span class="line">            rank[-<span class="number">1</span>] = current_card</span><br><span class="line">            flag = <span class="literal">True</span></span><br><span class="line">            use = <span class="number">5</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> flag: <span class="keyword">continue</span></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">points = <span class="number">0</span></span><br><span class="line"><span class="keyword">if</span> checkIfEnd(rank):</span><br><span class="line">    points = calcBonus(rank)+<span class="built_in">sum</span>(rank)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    points = calcBonus(rank)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(points)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>也就是把这个代码写完了昂</p>
+<p><img src="/../assets/240317-acsl-answer/1.png" alt="alt text"></p>
+<p>过的非常干脆利索，没有任何问题。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>虽然过的干脆利落，但是我最后答完题后流连于监考会议室，没有正确摆放监考设备，被监考老师抓住了，拉到讨论室里说了一顿，我连忙展示我已经完成了题目，我也不知道最后结果如何，希望能过吧，实在不行就找组委会讲理去。</p>
+
+        
+      </div>
+
+         
+    </div>
+    
+     
+  </div>
+  
+    
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/a4bbf5c1/"
+      title="添情"
+     >
+
+    <p class="title-text">
+      
+        添情
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
+
+  
+</article>
+
+
+
+
+  <script src="https://cdn.staticfile.org/twikoo/1.6.26/twikoo.all.min.js"></script>
+  <div id="comment-card" class="comment-card">
+    <div class="main-title-bar">
+      <div class="main-title-dot"></div>
+      <div class="main-title">Comments </div>
+    </div>
+    <div id="tcomment"></div>
+  </div>
+  <script>
+      twikoo.init({
+          envId: 'https://twikoo-flax-gamma.vercel.app/',
+          el: '#tcomment',
+          region: '',
+          path: 'location.pathname',
+          lang: '',
+      })
+  </script>
+  
+
+
+    </div>
+    <div id="footer-wrapper">
+      <footer id="footer">
+  
+  <div id="footer-info" class="inner">
+    
+    &copy; 2024 Leo Huo<br>
+    Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & Theme <a target="_blank" rel="noopener" href="https://github.com/saicaca/hexo-theme-vivia">Vivia</a>
+  </div>
+</footer>
+
+    </div>
+    <div class="back-to-top-wrapper">
+    <button id="back-to-top-btn" class="back-to-top-btn hide" onclick="topFunction()">
+        <i class="fa-solid fa-angle-up"></i>
+    </button>
+</div>
+
+<script>
+    function topFunction() {
+        window.scroll({ top: 0, behavior: 'smooth' });
+    }
+    let btn = document.getElementById('back-to-top-btn');
+    function scrollFunction() {
+        if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+            btn.classList.remove('hide')
+        } else {
+            btn.classList.add('hide')
+        }
+    }
+    window.onscroll = function() {
+        scrollFunction();
+    }
+</script>
+
+  </div>
+  <script src="/js/light-dark-switch.js"></script>
+</body>
+</html>
