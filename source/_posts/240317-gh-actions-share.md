@@ -1,12 +1,13 @@
 ---
 title: Hexo Github 自动部署和一些踩坑经验
-date: 2024-03-17 10:39:55
 tags:
-    - Blog
-    - Hexo
-    - Github
+  - Blog
+  - Hexo
+  - Github
 catagories:
-    - Config
+  - Config
+abbrlink: 97df2bec
+date: 2024-03-17 10:39:55
 ---
 
 ## 前言
