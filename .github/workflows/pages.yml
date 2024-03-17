@@ -31,10 +31,11 @@ jobs:
         git clone https://github.com/saicaca/hexo-theme-vivia.git themes/vivia
         npm install colorjs.io stylus hexo-symbols-count-time
 
-    - name: Deploy
-      env:
-        GH_TOKEN: ${{ secrets.TOKEN }}
-      run: |
-        npm install hexo-deployer-git --save
-        hexo generate
-        hexo deploy
+    - name: Generate static pages
+      run: hexo generate
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public  # Hexo默认生成的目录
