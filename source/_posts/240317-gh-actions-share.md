@@ -4,7 +4,7 @@ tags:
   - Blog
   - Hexo
   - Github
-catagories:
+categories: 
   - Config
 abbrlink: 97df2bec
 date: 2024-03-17 10:39:55
