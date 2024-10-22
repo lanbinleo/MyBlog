@@ -3,7 +3,7 @@ menu:
   Home: /
   Archives: /archives
   About: /about
-rss: /atom.xml
+rss: /rss.xml
 
 home:
   style: default           
@@ -32,7 +32,7 @@ hue: 255
 avatar: assets/62149873.jpg      
   # 头像图片文件路径，相对于 /source 目录
 author: Leo Huo
-subtitle: The moon decorates your windows, you decorate other people's dreams.
+subtitle: 迷失的人迷失了，相逢的人会再相逢。
 links:
   - name: Email Me
     icon: fa-regular fa-envelope
@@ -95,5 +95,5 @@ comment:
 gauges_analytics: false
 google_analytics: false 
   # UA-xxxxxx
-baidu_analytics: 3c140db78a889d4844bf4081baf137f5 
+# baidu_analytics: 3c140db78a889d4844bf4081baf137f5 
   # ddxxxxxxxxxxxxxxxxx In the https://hm.baidu.com/hm.js? Afterwards

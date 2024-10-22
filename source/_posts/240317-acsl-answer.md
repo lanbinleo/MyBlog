@@ -6,7 +6,7 @@ tags:
     - ACSL
     - Python
 categories:
-    - Coding
+    - 代码
 ---
 
 今天考了ACSL中级组第三轮，题目还是比较有意思的。是关于Rack-O游戏的模拟。

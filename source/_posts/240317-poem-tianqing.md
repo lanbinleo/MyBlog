@@ -4,9 +4,8 @@ abbrlink: a4bbf5c1
 date: 2024-03-17 11:16:14
 tags: 
     - Poem
-    - Love
 categories: 
-    - Literary
+    - 随笔
 ---
 
 旧时只言冬晴好，
