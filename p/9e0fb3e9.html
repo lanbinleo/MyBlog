@@ -11,41 +11,30 @@
   <meta charset="utf-8">
   
   
-<!-- Global site tag (gtag.js) - Baidu Analytics -->
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?3c140db78a889d4844bf4081baf137f5";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-<!-- End Baidu Analytics -->
-
   
 
   
-  <title>Willana | Lanbin Leo</title>
+  <title>关于开源的一些随笔 | Lanbin Leo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="It is a memorable day!">
+  <meta name="description" content="许多人虽然从事开源项目，但对开源协议的具体规定理解仍然较为模糊。他们依然会本能地认为这些项目是属于自己的，尽管已经开源，但仍觉得使用权限由自己决定，最终解释权归自己所有。然而，开源并不是这样的。 对于市面上几乎所有的主流开源协议，如MIT、Apache、GPL等，当你选择开源时，意味着任何人都可以自由复制、使用、修改、分发你的代码。而且，注意，这并不要求必须在GitHub上点击fork才算符合协议">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Willana">
-<meta property="og:url" content="https://blog.lanbin.top/p/71246382.html">
+<meta property="og:title" content="关于开源的一些随笔">
+<meta property="og:url" content="https://blog.lanbin.top/p/9e0fb3e9.html">
 <meta property="og:site_name" content="Lanbin Leo">
-<meta property="og:description" content="It is a memorable day!">
+<meta property="og:description" content="许多人虽然从事开源项目，但对开源协议的具体规定理解仍然较为模糊。他们依然会本能地认为这些项目是属于自己的，尽管已经开源，但仍觉得使用权限由自己决定，最终解释权归自己所有。然而，开源并不是这样的。 对于市面上几乎所有的主流开源协议，如MIT、Apache、GPL等，当你选择开源时，意味着任何人都可以自由复制、使用、修改、分发你的代码。而且，注意，这并不要求必须在GitHub上点击fork才算符合协议">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-03-14T22:33:26.000Z">
-<meta property="article:modified_time" content="2024-03-18T11:04:35.480Z">
+<meta property="article:published_time" content="2024-07-15T19:53:03.000Z">
+<meta property="article:modified_time" content="2024-10-22T11:06:54.419Z">
 <meta property="article:author" content="Leo Huo">
-<meta property="article:tag" content="Memo">
+<meta property="article:tag" content="Github">
+<meta property="article:tag" content="开源">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Lanbin Leo" type="application/atom+xml">
+    <link rel="alternate" href="/rss.xml" title="Lanbin Leo" type="application/atom+xml">
   
   
     <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
@@ -102,7 +91,7 @@ var _hmt = _hmt || [];
       <span class="dark-mode-icon"><svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M480.239-116.413q-152.63 0-258.228-105.478Q116.413-327.37 116.413-480q0-130.935 77.739-227.435t206.304-125.043q43.022-9.631 63.87 10.869t3.478 62.805q-8.891 22.043-14.315 44.463-5.424 22.42-5.424 46.689 0 91.694 64.326 155.879 64.325 64.186 156.218 64.186 24.369 0 46.978-4.946 22.609-4.945 44.413-14.076 42.826-17.369 62.967 1.142 20.142 18.511 10.511 61.054Q807.174-280 712.63-198.206q-94.543 81.793-232.391 81.793Zm0-95q79.783 0 143.337-40.217 63.554-40.218 95.793-108.283-15.608 4.044-31.097 5.326-15.49 1.283-31.859.805-123.706-4.066-210.777-90.539-87.071-86.473-91.614-212.092-.24-16.369.923-31.978 1.164-15.609 5.446-30.978-67.826 32.478-108.282 96.152Q211.652-559.543 211.652-480q0 111.929 78.329 190.258 78.329 78.329 190.258 78.329ZM466.13-465.891Z"/></svg></span>
     </a>
     
-      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/atom.xml" title="RSS Feed">
+      <a id="nav-rss-link" class="nav-icon mobile-hide" href="/rss.xml" title="RSS Feed">
         <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M198-120q-25.846 0-44.23-18.384-18.384-18.385-18.384-44.23 0-25.846 18.384-44.23 18.384-18.385 44.23-18.385 25.846 0 44.23 18.385 18.384 18.384 18.384 44.23 0 25.845-18.384 44.23Q223.846-120 198-120Zm538.385 0q-18.846 0-32.923-13.769-14.076-13.769-15.922-33.23-8.692-100.616-51.077-188.654-42.385-88.039-109.885-155.539-67.5-67.501-155.539-109.885Q283-663.462 182.385-672.154q-19.461-1.846-33.23-16.23-13.769-14.385-13.769-33.846t14.076-32.922q14.077-13.461 32.923-12.23 120.076 8.692 226.038 58.768 105.961 50.077 185.73 129.846 79.769 79.769 129.846 185.731 50.077 105.961 58.769 226.038 1.231 18.846-12.538 32.922Q756.461-120 736.385-120Zm-252 0q-18.231 0-32.423-13.461t-18.653-33.538Q418.155-264.23 348.886-333.5q-69.27-69.27-166.501-84.423-20.077-4.462-33.538-18.961-13.461-14.5-13.461-33.346 0-19.076 13.884-33.23 13.884-14.153 33.115-10.922 136.769 15.384 234.384 112.999 97.615 97.615 112.999 234.384 3.231 19.23-10.538 33.115Q505.461-120 484.385-120Z"/></svg>
       </a>
     
@@ -121,7 +110,7 @@ var _hmt = _hmt || [];
       <a class="nav-dropdown-link" href="/about">About</a>
     
     
-      <a class="nav-dropdown-link" href="/atom.xml" title="RSS Feed">RSS</a>
+      <a class="nav-dropdown-link" href="/rss.xml" title="RSS Feed">RSS</a>
      
     </div>
 </div>
@@ -147,7 +136,7 @@ var _hmt = _hmt || [];
     <div class="info">
       <div class="username">Leo Huo </div>
       <div class="dot"></div>
-      <div class="subtitle">The moon decorates your windows, you decorate other people's dreams. </div>
+      <div class="subtitle">迷失的人迷失了，相逢的人会再相逢。 </div>
       <div class="link-list">
         
           <a class="link-btn" href="mailto:lanbinwolf@gmail.com" title="Email Me"><i class="fa-regular fa-envelope"></i></a>
@@ -171,18 +160,18 @@ var _hmt = _hmt || [];
     <div class="widget">
       <h3 class="widget-title">Categories</h3>
       <div class="category-box">
-            <a class="category-link" href="/categories/Coding/">
-                Coding
+            <a class="category-link" href="/categories/%E4%BB%A3%E7%A0%81/">
+                代码
                 <div class="category-count">2</div>
             </a>
         
-            <a class="category-link" href="/categories/Config/">
-                Config
+            <a class="category-link" href="/categories/%E7%BB%8F%E9%AA%8C/">
+                经验
                 <div class="category-count">1</div>
             </a>
         
-            <a class="category-link" href="/categories/Literary/">
-                Literary
+            <a class="category-link" href="/categories/%E9%9A%8F%E7%AC%94/">
+                随笔
                 <div class="category-count">3</div>
             </a>
         </div>
@@ -195,7 +184,7 @@ var _hmt = _hmt || [];
   <div class="widget-wrap">
     <div class="widget">
       <h3 class="widget-title">Tags</h3>
-      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ACSL/" rel="tag">ACSL</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Love/" rel="tag">Love</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Memo/" rel="tag">Memo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Music/" rel="tag">Music</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Poem/" rel="tag">Poem</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Theme/" rel="tag">Theme</a></li></ul>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/ACSL/" rel="tag">ACSL</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Music/" rel="tag">Music</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Poem/" rel="tag">Poem</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/Theme/" rel="tag">Theme</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a></li></ul>
     </div>
   </div>
 
@@ -208,7 +197,7 @@ var _hmt = _hmt || [];
        
 
 
-<article id="post-Willana" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-240715-opensource" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
    
@@ -221,7 +210,7 @@ var _hmt = _hmt || [];
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        Willana
+        关于开源的一些随笔
       </h1>
     
   
@@ -229,27 +218,31 @@ var _hmt = _hmt || [];
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2024-03-14T22:33:26.000Z" itemprop="datePublished">2024-03-14</time>
+  <time class="dt-published" datetime="2024-07-15T19:53:03.000Z" itemprop="datePublished">2024-07-15</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-  <a class="meta-cate-link" href="/categories/Literary/">Literary</a>
+  <a class="meta-cate-link" href="/categories/%E9%9A%8F%E7%AC%94/">随笔</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            18 words 
+            691 words 
           </div>
         </div>
         
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Memo/" rel="tag">Memo</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BC%80%E6%BA%90/" rel="tag">开源</a></li></ul>
 
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>It is a memorable day!</p>
+          <p>许多人虽然从事开源项目，但对开源协议的具体规定理解仍然较为模糊。他们依然会本能地认为这些项目是属于自己的，尽管已经开源，但仍觉得使用权限由自己决定，最终解释权归自己所有。然而，开源并不是这样的。</p>
+<p>对于市面上几乎所有的主流开源协议，如MIT、Apache、GPL等，当你选择开源时，意味着任何人都可以自由复制、使用、修改、分发你的代码。而且，注意，这并不要求必须在GitHub上点击fork才算符合协议的复制。任何形式的复制，包括将源代码打包传到自己的网站上，都是合法合规的。当然，每个协议在修改时都有其特定的规定，大多数协议要求保留原协议和署名，这里暂且不提。</p>
+<p>但如果仅仅是复制你的开源代码并放在其他地方，是完全没有问题的。即使使用了你的用户名，用户名也不受法律保护。然而，这一切的前提是代码具有开源协议。有些人认为在GitHub上公开的仓库不都是开源代码，这种看法是错误的。公开源代码和开源是两个不同的概念。</p>
+<p>开源的核心不是那些公开的源代码，而是规定源代码如何使用的协议，即仓库中最不起眼的许可证文件。有了这个文件，项目才是开源的；没有这个文件，即使源代码完全公开，也不能自由使用。公开的源代码放在路边，也不能随便拿走，就像在路边遇到一个人，也不能随意接触。</p>
+<p>因此，即使那些有开源协议的代码你可以直接拿来放在自己网站上，但那些没有开源协议的代码，你不能随意复制和分发，这样做是侵权的。当然，我们这里讨论的是理论上的规定，实际操作中可能会遇到许多复杂因素，比如某人抄袭了你在GitHub上的项目，你打算起诉他，但对方可能会问你GitHub是什么，你如何登录等，这些问题可能会使事情变得复杂。</p>
 
         
       </div>
@@ -262,22 +255,22 @@ var _hmt = _hmt || [];
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left "
-    
-      href="/p/4a17b156.html"
-      title="Hello Hexo"
+  <a class="article-nav-btn left  disabled "
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
-      
-        Hello Hexo
         
     </p>
   </a>
-  <a class="article-nav-btn right  disabled "
+  <a class="article-nav-btn right "
+    
+      href="/p/70975104.html"
+      title="Tap To Midi | 用键盘敲击鼓点生成MIDI文件"
      >
 
     <p class="title-text">
+      
+        Tap To Midi | 用键盘敲击鼓点生成MIDI文件
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
